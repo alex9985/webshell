@@ -1,4 +1,4 @@
 <?php
-$output = shell_exec('ls -la');
+$output = shell_exec('ls -la 2>&1 | tee -a /tmp/mylog 2>/dev/null >/dev/null &');
 echo "<pre>$output</pre>";
 ?>
